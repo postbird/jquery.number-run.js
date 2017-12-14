@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery.number-run.js - jquery 数字滚动插件</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/jquery.number-run.min.js"></script>
+    <style>
+        .text-number {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron" style="padding:2rem 1rem;">
+            <h2 class="text-center">Jquery.number-run.js</h2>
+            <p class="lead text-right">jquery 数字滚动插件 - By
+                <a href='http://www.ptbird.cn'>Postbird</a>
+            </p>
+            <hr class="my-4">
+            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p> -->
+        </div>
+        <div class="row">
+            <div class=" col-md-12">
+                <h3>示例一：
+                    <button class="btn btn-default" onclick="numberRunExample1()">点击执行滚动</button>
+                    <span id="number-example-1" class="text-number" number="3276.32" speed="20">3276.32</span>
+                </h3>
+                <div class="list-group-item">
+                    number 和 speed 从 html 属性中获取，最终结果显示小数：number = 3276.32 ； speed = 20
+                </div>
+                <pre class="well">
+    $("#number-example-1").numberRun({
+        attr: true
+    });</pre>
+            </div>
+            <div class=" col-md-12">
+                <h3>示例二：
+                    <button class="btn btn-default" onclick="numberRunExample2()">点击执行滚动</button>
+                    <span id="number-example-2" class="text-number" number="3276" speed="30">3276</span>
+                </h3>
+                <div class="list-group-item">
+                    number 和 speed 从 html 属性中获取，最终结果显示整数：number = 3276 ； speed = 30
+                </div>
+                <pre class="well">
+    $("#number-example-2").numberRun({
+        attr: true
+    });</pre>
+            </div>
+            <div class=" col-md-12">
+                <h3>示例三：
+                    <button class="btn btn-default" onclick="numberRunExample3()">点击执行滚动</button>
+                    <span id="number-example-3" class="text-number">3276</span>
+                </h3>
+                <div class="list-group-item">
+                    number 和 speed 通过 js 进行配置：number = 3276 ； speed = 40
+                </div>
+                <pre class="well">
+    $("#number-example-3").numberRun({
+        number:3276,
+        speed:40
+    });</pre>
+            </div>
+            <div class=" col-md-12">
+                <h3>示例四：
+                    <button class="btn btn-default" onclick="numberRunExample4()">点击执行滚动</button>
+                    <span id="number-example-4" class="text-number">3276</span>
+                </h3>
+                <div class="list-group-item">
+                    number 和 speed 通过 js 进行配置：number = 3276 ； speed = 20
+                </div>
+                <div class="list-group-item">
+                    配置回调函数,滚动结束后，执行回调函数
+                </div>
+                <pre class="well">
+    $("#number-example-4").numberRun({
+        number: 3276,
+        speed: 60,
+        callback:function(){
+            alert("滚动完成，number = 3276，speed = 20");
+        }
+    });</pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>参数说明：</h2>
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>参数名称</th>
+                            <th>参数说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>attr</td>
+                            <td>是否从 html 的 attr 中获取参数，如果选择是，则 html 中必须有
+                                <code>number</code> 和
+                                <code>speed</code> 两个 attr
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>number</td>
+                            <td>
+                                最终需要滚动的数字 可以从 html中获取，也可以配置，支持小数
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>speed</td>
+                            <td>滚动的速度，speed，滚动速度越慢</td>
+                        </tr>
+                        <tr>
+                            <td>callback</td>
+                            <td>回调函数，滚动完成后出发该方法</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>使用方式：</h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title">
+                            1、引入 jquery
+                        </p>
+                    </div>
+                    <div class="panel-heading">
+                        <p class="panel-title">
+                            2、引入 jquery.number-run.js
+                        </p>
+                    </div>
+                    <div class="panel-heading">
+                        <p class="panel-title">
+                            3、使用插件,代码见上面
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>License：MIT</h2>
+            </div>
+        </div>
+        <div class="row">
+            <hr>
+            <div class="text-center">
+                <p>
+                    Powered by
+                    <a href="http://www.ptbird.cn">Postbird - www.ptbird.cn</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function numberRunExample1() {
+        $("#number-example-1").numberRun({
+            attr: true
+        });
+    }
+    function numberRunExample2() {
+        $("#number-example-2").numberRun({
+            attr: true
+        });
+    }
+    function numberRunExample3() {
+        $("#number-example-3").numberRun({
+            number: 3276,
+            speed: 40
+        });
+    }
+    function numberRunExample4() {
+        $("#number-example-4").numberRun({
+            number: 3276,
+            speed: 20,
+            callback: function () {
+                alert("滚动完成，number = 3276，speed = 20");
+            }
+        });
+    }
+</script>
+
+</html>
