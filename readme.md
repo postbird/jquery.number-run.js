@@ -2,6 +2,11 @@
 
 > jquery.number-run.js 数字滚动插件
 
+## 在线演示：
+
+[https://postbird.gitee.io/jquery.number-run.js/](https://postbird.gitee.io/jquery.number-run.js/)
+
+
 ## 使用方式：
 
 ### 示例一：
